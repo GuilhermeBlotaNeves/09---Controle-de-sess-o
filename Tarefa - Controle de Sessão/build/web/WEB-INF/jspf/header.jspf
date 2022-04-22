@@ -1,0 +1,43 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<%
+    if(request.getParameter("session-form") !=null){
+    session.setAttribute("userName", request.getParameter("name"));
+    String senha = request.getParameter("senha");
+    session.setAttribute("senha", senha);
+    response.sendRedirect(request.getRequestURI()); 
+    }
+    if(request.getParameter("session-form-remove") !=null){
+    session.removeAttribute("userName");
+    session.removeAttribute("senha");
+}
+
+%>
+    
+     <div class="mask" style="background-color: rgba(0, 0, 0, 0.3);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-light"> 
+    <h2>My App Guilherme</h2>
+    <%if((session.getAttribute("userName") !=null)&&(session.getAttribute( " senha " ) == null )) {%>
+    <a href="index.jsp">Página Inicial</a>
+    <a href="about.jsp">Página informativa</a>
+    <a href="loteria.jsp">Dicas para loteria</a>
+       Sejá muito bem Vindo!, <%= session.getAttribute("userName")%>
+    <br>
+    <form>
+    <input type="submit"
+    name="session-form-remove"
+    value="Sair"/>
+    </form>
+    <%}else{%>
+    <form>
+    Nome: <input type="text" placeholder="Digite seu Nome" name="name"/>
+    <br>
+    Senha: <input type="password" placeholder="Digite sua senha" name= "senha"/>
+    <input type="submit" name="session-form" value="Entrar"/>  
+    </form>
+    <%}%>
+    </div>
+  </div>
+</div>
+    
