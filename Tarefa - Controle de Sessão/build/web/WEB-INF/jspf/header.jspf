@@ -5,11 +5,12 @@
     session.setAttribute("userName", request.getParameter("name"));
     String senha = request.getParameter("senha");
     session.setAttribute("senha", senha);
-    response.sendRedirect(request.getRequestURI()); 
+    response.sendRedirect(request.getRequestURI());
     }
     if(request.getParameter("session-form-remove") !=null){
     session.removeAttribute("userName");
     session.removeAttribute("senha");
+    response.sendRedirect(request.getRequestURI());
 }
 
 %>
