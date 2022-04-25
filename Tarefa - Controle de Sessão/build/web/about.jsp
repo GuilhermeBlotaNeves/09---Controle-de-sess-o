@@ -18,7 +18,7 @@
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-light">
         <h1>Guilherme Blota Neves</h1>
-        <h2>RA:1290482022010 </h2>
+        <h2>RA:1290482022010</h2>
         <a href=https://github.com/GuilhermeBlotaNeves?tab=repositories>Meu GitHub</a>
     </body>
 </html>
